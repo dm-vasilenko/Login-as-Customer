@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add action="custom/index/grid"
+             id="Web4Pro_CustomAuthorization::login_grid"
+             module="Web4Pro_CustomAuthorization"
+             parent="Magento_Customer::customer"
+             resource="Web4Pro_CustomAuthorization::login_grid" sortOrder="9999"
+             title="Login As Customer Grid"/>
+    </menu>
+</config>

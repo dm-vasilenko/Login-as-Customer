@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="web4pro_add_customer_button"
+                type="Web4Pro\CustomAuthorization\Plugin\OrderButton" sortOrder="1" disabled="false"/>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+        <argument name="collections" xsi:type="array">
+            <item name="login_as_customer_grid_listing_data_source" xsi:type="string">
+                myGridCollection</item>
+        </argument>
+    </arguments>
+    </type>
+
+    <virtualType name="myGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="resourceModel" xsi:type="string">Web4Pro\CustomAuthorization\Model\ResourceModel\LoginAsCustomer</argument>
+        </arguments>
+    </virtualType>
+</config>
